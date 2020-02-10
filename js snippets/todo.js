@@ -2,11 +2,11 @@ let todo = [];
 function addItem(arr) {
   let answer = prompt('what would like to do for today');
   let correct = answer.toLowerCase().trim();
-  if (!isDuplicate(arr, correct)) {
+  if (!doesExist(arr, correct)) {
     arr.push(correct);
   } else alert('the item does exist');
 }
-function isDuplicate(arr, item) {
+function doesExist(arr, item) {
   let doesExist = false;
   let index = arr.indexOf(item);
   if (index == -1) {
@@ -20,7 +20,7 @@ function isDuplicate(arr, item) {
 function removeItem(arr) {
   let answer = prompt('what item have you finished and you want to delete');
   let correct = answer.toLowerCase().trim();
-  if (isDuplicate(arr, correct)) {
+  if (doesExist(arr, correct)) {
     console.log(`the removed item is "${arr[arr.indexOf(correct)]}"`);
     arr.splice(arr.indexOf(correct), 1);
   } else alert('their is no such item in your todo list');

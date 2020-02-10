@@ -9,7 +9,8 @@ console.log(btn.nodeName);
 console.log(document.getElementsByTagName('h1'));
 // document.getElementsByTagName('h1').style.color = 'black';
 h1 = document.getElementsByTagName('h1');
-const betterList = [...h1];
+const betterList = [...h1];// we deconstruct it since that dom method will result in
+// a node collection 
 console.log(betterList);
 h1[0].style.color = 'black';
 // using a for each on a an object collection

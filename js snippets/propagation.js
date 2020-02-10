@@ -13,9 +13,9 @@ btn.addEventListener('click', function() {
   h1.textContent = ' i ma a heading';
   container.appendChild(h1);
 });
-
+// add click event to dynamically created elements
 container.addEventListener('click', function(event) {
-//    console.log(event.target);
+  console.log(event.target);
   if (event.target.classList.contains('heading2')) {
     event.target.addEventListener('click', function(event) {
       console.log(event.target.textContent);

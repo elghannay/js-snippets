@@ -1,9 +1,12 @@
+// function to determine the odd numbers
 let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-let odd = [];
-for (let i = 0; i < numbers.length; i++) {
-  if (numbers[i] % 2 !== 0) odd.push(numbers[i]);
+function odd(numbers) {
+  let odd = [];
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 !== 0) odd.push(numbers[i]);
+  }
+  return odd;
 }
-console.log(odd);
 // forEach loop
 numbers.forEach(function(element, index) {
   console.log(`the first elements is ${element} with an index of ${index + 1}`);
@@ -32,7 +35,7 @@ let fruits = [
   'orange',
   'melon',
   'apple'
-];
+]; // this will return only oranges
 let chain = fruits
   .filter(function(fruit) {
     return fruit == 'orange';
@@ -58,6 +61,8 @@ console.log(reduce2);
 // reduce method that returns an object of how many fruits of each type
 const reduce3 = fruits.reduce(function(acc, current) {
   if (acc[current]) acc[current]++;
+  // if the value does not exist this
+  // expression will result in undefined and > that is falsy
   else acc[current] = 1;
   return acc;
 }, {});
@@ -66,6 +71,7 @@ console.log(reduce3);
 function greet({ name, greeting }) {
   return `${greeting} ${name}`;
 }
+
 let hi = greet({ name: 'mohamed', greeting: 'hello there' });
 console.log(hi);
 // the average of the class function
